@@ -48,7 +48,7 @@ header {
     top: 30px;
 }
 
-#link-sobre {
+#link-about {
     margin-left: 8.7%;
     margin-top: 42px;
     text-decoration: none;
@@ -57,7 +57,7 @@ header {
     position: absolute;
 }
 
-#link-receitas {
+#link-recipes-home {
     margin-left: 13.9%;
     margin-top: 42px;
     text-decoration: none;
@@ -96,7 +96,7 @@ footer p{
 
 /*========DESCRIÇÃO CHEF===========*/
 
-.descricao{
+.description-home{
     width: 940px;
     height: 366px;
     background-color: #FBDFDB;
@@ -106,20 +106,20 @@ footer p{
     display: flex
 }
 
-.texto h1{
+.text-home h1{
     font-size: 32px;
     font-weight: bold;
     line-height: 38px;
 }
 
-.texto p{
+.text-home p{
     font-size: 18px;
     color: #000000;
     line-height: 28px;
     opacity: 0.7;
 }
 
-.texto {
+.text-home {
     margin-left: 4.3%;
     margin-top: 10.6%;
     width: 316px;
@@ -138,11 +138,11 @@ footer p{
 
 /*==========MAIS ACESSADAS========*/
 
-.receitas {
+.recipes-home {
     margin-top: 50px;
     margin-left: 16.4%;
 }
-.receitas h1{
+.recipes-home h1{
     font-size: 24px;
     line-height: 28px;
     font-weight: bold;
@@ -177,26 +177,26 @@ footer p{
     cursor: pointer;
 }
 
-/*==========SOBRE=========*/
+/*==========about=========*/
 
-.sobre{
+.about{
     margin: 50px 230px;
 }
 
-.sobre h1{
+.about h1{
     font-size: 24px;
     font-weight: bold;
     line-height: 28px;
     margin-bottom: 1.8%;
 }
 
-.sobre p{
+.about p{
     font-size: 18px;
     line-height: 28px;
     margin-bottom: 2.7%;
 }
 
-.sobre h2{
+.about h2{
     font-size: 20px;
     line-height: 24px;
     font-weight: bold;
@@ -205,12 +205,12 @@ footer p{
 
 /*=============DETALHE DA RECEITA=============*/
 
-.receita-detalhe {
+.recipe-detail {
     margin: 50px 230px;
     width: 940px;
 }
 
-.admin .receita-detalhe{
+.admin .recipe-detail{
     margin-top: 55px;
 }
 
@@ -242,27 +242,27 @@ footer p{
     justify-content: center;
 }
 
-.receita-detalhe img{
+.recipe-detail img{
     height: 280px;
     width: 940px;
     object-fit: cover;
     border-radius: 15px;
 }
 
-.receita-title {
+.recipe-title {
     margin-top: 50px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.receita-title h1{
+.recipe-title h1{
     font-size: 36px;
     line-height: 42px;
     font-weight: bold;
     color: #111111;
 }
 
-.receita-title h2{
+.recipe-title h2{
     font-size: 20px;
     line-height: 24px;
     color: #777777;
