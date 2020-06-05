@@ -1,0 +1,468 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+}
+
+body {
+    font-family: 'Roboto';
+    height: 100%;
+}
+/*==========HEADER=========*/
+header {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+}
+
+.admin header {
+    background-color: #111111;
+}
+
+.admin #logo img{
+    margin-top: 27px;
+    margin-left: 16.5%;
+    width: 6.5%;
+    height: 26.9px;
+}
+
+#logo img{
+    margin-top: 36.1px;
+    margin-left: 231px;
+    width: 90.6px;
+    height: 26.9px;
+}
+
+.menu   {
+    font-size: 16px;
+}
+
+.admin .menu #link-logout{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+#link-sobre {
+    margin-left: 8.7%;
+    margin-top: 42px;
+    text-decoration: none;
+    color: black;
+    line-height: 19px;
+    position: absolute;
+}
+
+#link-receitas {
+    margin-left: 13.9%;
+    margin-top: 42px;
+    text-decoration: none;
+    color: black;
+    line-height: 19px;
+    position: absolute;
+}
+
+#link-admin {
+    margin-top: 42px;
+    text-decoration: none;
+    color: black;
+    line-height: 19px;
+    position: absolute;
+    right: 5%;
+}
+
+/*==========FOOTER=============*/
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #EEEEEE;
+    height: 62px;
+    display: flex;
+    position: absolute;
+    margin-bottom: 0;
+}
+
+footer p{
+    margin: auto;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+
+/*========DESCRIÇÃO CHEF===========*/
+
+.descricao{
+    width: 940px;
+    height: 366px;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-left: 16.4%;
+    display: flex
+}
+
+.texto h1{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 38px;
+}
+
+.texto p{
+    font-size: 18px;
+    color: #000000;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.texto {
+    margin-left: 4.3%;
+    margin-top: 10.6%;
+    width: 316px;
+}
+
+.chef {
+    position: absolute;
+    margin: 66px 0 0 624px;
+}
+
+.chef img{
+    width: 216px;
+    height: 300px
+}
+
+
+/*==========MAIS ACESSADAS========*/
+
+.receitas {
+    margin-top: 50px;
+    margin-left: 16.4%;
+}
+.receitas h1{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+}
+
+.card img{
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.card p{
+    color: #777777;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/*==========SOBRE=========*/
+
+.sobre{
+    margin: 50px 230px;
+}
+
+.sobre h1{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    margin-bottom: 1.8%;
+}
+
+.sobre p{
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 2.7%;
+}
+
+.sobre h2{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-bottom: 1.8%;
+}
+
+/*=============DETALHE DA RECEITA=============*/
+
+.receita-detalhe {
+    margin: 50px 230px;
+    width: 940px;
+}
+
+.admin .receita-detalhe{
+    margin-top: 55px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+    width: 940px;
+}
+
+.description h1 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.save {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #6558C3;
+    border-radius: 4px;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.receita-detalhe img{
+    height: 280px;
+    width: 940px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.receita-title {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.receita-title h1{
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.receita-title h2{
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+    font-weight: normal;
+}
+
+.title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.titles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    gap: 8px;
+}
+
+.button-ingredients,
+.button-prepare,
+.button-info{
+    font-size: 12px;
+    color: #999999;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+
+.content-ingredients,
+.content-prepare {
+    margin-top: 20px;
+    margin-bottom: 39px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin-left: 20px;
+    display: none;
+}
+
+.content-info {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    display: none;
+}
+
+.admin .content-ingredients,
+.admin .content-prepare,
+.admin .content-info {
+    display: block;
+}
+
+.active {
+    display: block;
+}
+
+
+/*=============LISTAGEM ADMIN=============*/
+
+.recipes-list {
+    margin-left: 230px;
+    max-width: 950px;
+}
+
+.recipes-list h1{
+    margin-top: 50px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.admin-list-cards {
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 20px;
+}
+
+.admin-list-card {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 20px;
+}
+
+.admin-list-card img{
+    width: 172px;
+    height: 80px;
+    border-radius: 8.57px;
+}
+
+.admin-list-card-info h2{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.admin-list-card-info p {
+    font-size: 14px;
+    line-height: 16px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.admin-list-card-info a{
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #6558C3;
+    font-weight: bold;
+}
+
+/*=============EDIT ADMIN=============*/
+.edit {
+     margin-left: 230px;
+     margin-top: 55px;
+     width: 940px;
+ }
+
+.description{
+     display: flex;
+ }
+
+.edit-content form .description button {
+    background-color: #6558C3;
+    border-radius: 4px;
+    height: 37px;
+    padding: 9px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.description a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6558C3;
+    border-radius: 4px;
+    padding: 9px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    font-weight: bold;
+}
+
+.description .delete {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    color: white;
+    background-color: #DC4747;
+    border-radius: 4px;
+    position: absolute;
+    padding: 9px 20px;
+    left: 692px;
+    top: 19px;
+ }
+
+.edit-content form p{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+ }
+
+.edit-content form input {
+     width: 100%;
+     border-radius: 4px;
+     border: 1px solid #DDDDDD;
+     box-sizing: border-box;
+     padding: 15px 20px;  
+ }
+
+ .edit-content form .ingredient,
+ .edit-content form .preparation {
+    margin-bottom: 10px;
+ }
+
+.edit-content form textarea {
+    height: 257px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 18px 20px;
+}
+
+.edit-content form button {
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6558C3;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+}
