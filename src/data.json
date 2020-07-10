@@ -139,5 +139,48 @@
       ],
       "information": ""
     }
+  ],
+
+  "chefs": [
+    {
+      "id": "1",
+      "image": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "name": "Júlia Kinoto"
+    },
+    {
+      "id": "2",
+      "image": "https://images.unsplash.com/photo-1504911539020-cfb0f7887a5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Bairam Frootan"
+    },
+    {
+      "id": "3",
+      "image": "https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "name": "Filipa Gaspar"
+    },
+    {
+      "id": "4",
+      "image": "https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "name": "Marysa Labrone"
+    },
+    {
+      "id": "5",
+      "image": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=325&q=80",
+      "name": "Mok Kwang"
+    },
+    {
+      "id": "6",
+      "image": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Kendasha Wood"
+    },
+    {
+      "id": "7",
+      "image": "https://images.unsplash.com/photo-1547417080-bdc11256756f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Thenjiwe Msutu"
+    },
+    {
+      "id": "8",
+      "image": "https://images.unsplash.com/photo-1559575003-fb4ee38a747d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80",
+      "name": "Uzoma Buchi"
+    }
   ]
 }

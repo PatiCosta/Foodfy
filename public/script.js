@@ -1,3 +1,25 @@
+// Bold link
+
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("a")
+
+
+for (item of menuItems) {
+    if( currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("link-active")
+    }
+}
+
+// No search on chefs page
+
+const formSearch = document.querySelector("form")
+
+if(currentPage.includes("chefs") || currentPage.includes("sobre")) {
+    formSearch.classList.add("no-search")
+}
+
+// cards link
+
 const cards = document.querySelectorAll('.card')
 for (let card of cards) {
     card.addEventListener("click", function(){
@@ -6,6 +28,7 @@ for (let card of cards) {
     })
 }
 
+// SHOW/HIDE
 
 let buttonIngredients = document.querySelector ('.button-ingredients')
 let buttonPrepare = document.querySelector ('.button-prepare')
@@ -53,3 +76,4 @@ let contentInfo = document.querySelector('.content-info')
         contentInfo.classList.add('active')
     }
 })
+
