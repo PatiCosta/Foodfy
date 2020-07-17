@@ -5,16 +5,16 @@
         
     {% endblock %}
     {% block content %}
-        <div class="receita-detalhe admin">
+        <div class="recipe-detail admin">
             <div class="description">
                 <h1>Receita: {{item.title}}</h1>
-                <a href="/admin/recipes/{{item.id}}/edit">Editar receita</a>
+                <a href="/admin/receitas/{{item.id}}/edit">Editar receita</a>
             </div>
             <img src="{{item.image}}" alt="{{item.title}}">
 
-            <div class="receita-title">
+            <div class="recipe-title">
                 <h1>{{item.title}}</h1>
-                <h2>por {{item.author}}</h2>
+                <h2>por {{item.chef}}</h2>
             </div>
             
             <div class="titles">

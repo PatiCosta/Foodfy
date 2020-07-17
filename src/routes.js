@@ -13,13 +13,25 @@ routes.get("/chefs", public.listChefs)
 routes.get("/search", public.search)
 
 //admin
-routes.get("/admin/recipes", user.index);
-routes.get("/admin/recipes/create", user.create);
-routes.get("/admin/recipes/:id", user.show);
-routes.get("/admin/recipes/:id/edit", user.edit);
+routes.get("/admin/receitas", user.recipeIndex);
+routes.get("/admin/receitas/create", user.recipeCreate);
+routes.get("/admin/receitas/:id", user.recipeShow);
+routes.get("/admin/receitas/:id/edit", user.recipeEdit);
 
-routes.post("/admin/recipes", user.post); 
-routes.put("/admin/recipes", user.put); 
-routes.delete("/admin/recipes", user.delete); 
+routes.get("/admin/chefs", user.chefIndex)
+routes.get("/admin/chefs/create", user.chefCreate)
+routes.get("/admin/chefs/:id", user.chefShow)
+routes.get("/admin/chefs/:id/edit", user.chefEdit)
+
+routes.post("/admin/receitas", user.recipePost); 
+routes.put("/admin/receitas", user.recipePut); 
+routes.delete("/admin/receitas", user.recipeDelete); 
+
+routes.post("/admin/chefs", user.chefPost)
+routes.put("/admin/chefs", user.chefPut)
+routes.delete("/admin/chefs", user.chefDelete)
+
+
+
 
 module.exports = routes

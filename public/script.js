@@ -14,7 +14,7 @@ for (item of menuItems) {
 
 const formSearch = document.querySelector("form")
 
-if(currentPage.includes("chefs") || currentPage.includes("sobre")) {
+if(currentPage.includes("chefs") || currentPage.includes("sobre") || currentPage.includes("receitas")) {
     formSearch.classList.add("no-search")
 }
 

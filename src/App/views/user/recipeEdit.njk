@@ -8,7 +8,14 @@
         <div class="edit">
             <div class="edit-content">
 
-                <form action="/admin/recipes?_method=PUT" method="POST">
+                <div class="description">
+                    <form id="form-delete" action="/admin/receitas?_method=DELETE" method="POST">
+                        <input type="hidden" name="id" value={{item.id}}>
+                        <button type="submit" class="delete">Deletar</button>
+                    </form>
+                </div>
+
+                <form action="/admin/receitas?_method=PUT" method="POST">
 
                     <div class="description">
                         <h1>Editando receita</h1>
@@ -20,24 +27,48 @@
                     <p>Imagem da receita</p>
                     <input type="text" name="image" value ="{{item.image}}">
 
+                    <p>Título da receita</p>
+                    <input type="text" name="title" value="{{item.title}}">
+
+                    <p>Chef</p>
+                    <select name="chef_id">
+                        {% for chef in options %}
+                            <option value="{{chef.id}}" {%if recipe.chef_id == chef.id %}selected{%endif%}>
+                                {{chef.name}}
+                            </option>
+                        {% endfor %}
+                    </select>
+
                     <p>Ingredientes</p>
                     <div id="ingredients">
+                        {%if item.ingredients%}
                             {% for ingredient in item.ingredients %}
                             <div class="ingredient">
                                 <input type="text" name="ingredients[]" value="{{ingredient}}">
                             </div>
                             {% endfor %}
+                        {%else%}
+                            <div class="ingredient">
+                                <input type="text" name="ingredients[]">
+                            </div>
+                        {% endif %}
                     </div>
                     <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
                     
 
                     <p>Modo de preparo</p>
                     <div id="preparations">
-                        {% for preparation in item.preparation %}
-                        <div class="preparation">
-                            <input type="text" name="preparation[]" value="{{preparation}}">
-                        </div>
-                        {% endfor %}
+                        {%if item.preparation%}
+                            {% for preparation in item.preparation %}
+                                <div class="preparation">
+                                    <input type="text" name="preparation[]" value="{{preparation}}">
+                                </div>
+                            {% endfor %}
+                        {%else%}
+                            <div class="preparation">
+                                    <input type="text" name="preparation[]" value="{{preparation}}">
+                            </div>
+                        {% endif %}
                     </div>
                     <button type="button" class="add-preparation">Adicionar novo passo</button>
 
@@ -52,13 +83,6 @@
                     >
 
                 </form>
-
-                <div class="description">
-                    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
-                        <input type="hidden" name="id" value={{item.id}}>
-                        <button type="submit" class="delete">Deletar</button>
-                    </form>
-                </div>
 
             </div>
         </div>

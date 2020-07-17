@@ -33,3 +33,4 @@ function addPreparation() {
     newField.children[0].value = "";
     preparations.appendChild(newField);
 }
+

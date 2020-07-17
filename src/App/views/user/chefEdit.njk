@@ -1,0 +1,29 @@
+{% extends "./layout.njk" %}
+
+    {% block head %}
+        <title>Novo Chef</title>
+        
+    {% endblock %}
+    {% block content %}
+        <div class="edit">
+            
+            <div class="edit-content">
+                <form action="/admin/chefs?_method=PUT" method="POST">
+
+                    <div class="description">
+                        <h1>Editando Chef</h1>
+                        <div>
+                            <button type="submit" class="save">Salvar chef</button>
+                            <input type="hidden" name="id" value="{{chef.id}}">
+                        </div>
+                    </div>
+
+                    <p>Nome</p>
+                    <input type="text" name="name" value="{{chef.name}}">
+
+                    <p>Avatar</p>
+                    <input type="text" name="avatar_url" value="{{chef.avatar_url}}">
+                </form>
+            </div>
+        </div>
+    {% endblock %}

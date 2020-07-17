@@ -8,7 +8,7 @@
         <div class="edit">
             
             <div class="edit-content">
-                <form action="/admin/recipes" method="POST">
+                <form action="/admin/receitas" method="POST">
 
                     <div class="description">
                         <h1>Criando receita</h1>
@@ -18,7 +18,19 @@
                     </div>
 
                     <p>Imagem da receita</p>
-                    <input type="text" name="image">
+                    <input type="text" name="image" placeholder="http://">
+
+                    <p>Título da receita</p>
+                    <input type="text" name="title">
+
+                    <p>Chef</p>
+                    <select name="chef_id" placeholder="Selecione um chef">
+                        {% for chef in chefOptions %}
+                            <option value="{{chef.id}}">
+                                {{chef.name}}
+                            </option>
+                        {% endfor %}
+                    </select>
 
                     <p>Ingredientes</p>
                     <div id="ingredients">
@@ -38,7 +50,7 @@
                     <button type="button" class="add-preparation">Adicionar novo passo</button>
 
                     <p>Informações adicionais</p>
-                    <textarea type="text" name="information"></textarea>
+                    <textarea type="text" name="information" cols="30" rows="10"></textarea>
         
                 </form>
             </div>
