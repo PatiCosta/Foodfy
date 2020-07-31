@@ -7,13 +7,13 @@
         <div class="recipes-list">
             <h1>Gerenciar receitas</h1>
             <div class="admin-list-cards">
-                {% for item in items %}
+                {% for item in items%}
                     <div class="admin-list-card" id="{{item.id}}">
-                        <img src="{{item.image}}" alt="{{item.title}}">
+                        <img src="{{item.src}}" alt="{{item.title}}">
                         <div class="admin-list-card-info">
                             <h2>{{item.title}}</h2>
-                            <p>{{item.author}}</p>
-                            <a href="/admin/receitas/{{item.id}}">Visualizar</a>
+                            <p>{{item.chef_name}}</p>
+                            <a href="/admin/recipes/{{item.id}}">Visualizar</a>
                         </div>
                     </div>
                 {% endfor %}

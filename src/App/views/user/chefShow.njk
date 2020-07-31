@@ -11,7 +11,7 @@
                 <a href="/admin/chefs/{{chef.id}}/edit">Editar Chef</a>
             </div>
             <div class="chef-image">
-                <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
+                <img src="{{chef.avatar}}" alt="{{chef.name}}">
             </div>
 
             <div class="chef-title">
@@ -25,11 +25,11 @@
             <div class="admin-list-cards">
                 {% for item in items %}
                     <div class="admin-list-card" id="{{item.id}}">
-                        <img src="{{item.image}}" alt="{{item.title}}">
+                        <img src="{{item.src}}" alt="{{item.title}}">
                         <div class="admin-list-card-info">
                             <h2>{{item.title}}</h2>
                             <p>por {{chef.name}}</p>
-                            <a href="/admin/receitas/{{item.id}}">Visualizar</a>
+                            <a href="/admin/recipes/{{item.id}}">Visualizar</a>
                         </div>
                     </div>
                 {% endfor %}

@@ -9,23 +9,41 @@
             <div class="edit-content">
 
                 <div class="description">
-                    <form id="form-delete" action="/admin/receitas?_method=DELETE" method="POST">
+                    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
                         <input type="hidden" name="id" value={{item.id}}>
-                        <button type="submit" class="delete">Deletar</button>
                     </form>
                 </div>
 
-                <form action="/admin/receitas?_method=PUT" method="POST">
+                <form action="/admin/recipes?_method=PUT" method="POST" enctype="multipart/form-data">
 
                     <div class="description">
                         <h1>Editando receita</h1>
                         <div>
+                            <input type="submit" class="delete" id="delete" value="Deletar" form="form-delete">
                             <button type="submit" class="save">Salvar receita</button>
                         </div>
                     </div>
 
                     <p>Imagem da receita</p>
-                    <input type="text" name="image" value ="{{item.image}}">
+                    <div class="photos-container">
+                        <div id="photos-upload">
+                            <input id="photos-input" type="file" name="photos" multiple accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
+                            <i class="material-icons">add</i>
+                        </div>
+                        <div id="photos-preview">
+                            {% if files %}
+                                {% for image in files %}
+                                    <div class="photo" id="{{image.file_id}}">
+                                        <img src="{{image.src}}" alt="{{image.name}}">
+                                        <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">
+                                            close
+                                        </i>
+                                    </div>
+                                {% endfor %}
+                                <input type="hidden" name="removed_files">
+                            {% endif %}
+                        </div>
+                    </div>
 
                     <p>Título da receita</p>
                     <input type="text" name="title" value="{{item.title}}">
@@ -33,7 +51,7 @@
                     <p>Chef</p>
                     <select name="chef_id">
                         {% for chef in options %}
-                            <option value="{{chef.id}}" {%if recipe.chef_id == chef.id %}selected{%endif%}>
+                            <option value="{{chef.id}}" {%if item.chef_id == chef.id %}selected{%endif%}>
                                 {{chef.name}}
                             </option>
                         {% endfor %}

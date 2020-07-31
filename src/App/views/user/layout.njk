@@ -4,14 +4,15 @@
         {% block head %}
         <title>Foodfy</title>
         {% endblock %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="/style.css">
     </head>
     <body class="admin">
         <header>
             <div class="menu">
-                <a href="/admin/receitas" id="logo"><img src="/logo-white.png" alt="Logo"></a>
+                <a href="/admin/recipes" id="logo"><img src="/logo-white.png" alt="Logo"></a>
                 <div class="links">
-                    <a href="/admin/receitas">Receitas</a>
+                    <a href="/admin/recipes">Receitas</a>
                     <a href="/admin/chefs">Chefs</a>
                 </div>
                 <a href="/" id="link-logout">logout</a>
@@ -21,6 +22,8 @@
         {%block content%}
         {% endblock %}
 
-        <script src="/scriptAdmin.js"></script>
+        <script src="/scriptAdmin.js">
+
+        </script>
     </body>
 </html>

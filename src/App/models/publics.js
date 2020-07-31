@@ -1,59 +1,45 @@
 const db = require('../../config/db')
 
 module.exports = {
-    index(callback) {
-        let query = `            
-            SELECT recipes.*, chefs.name AS chef_name
-            FROM recipes
-            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`
-
-        db.query(query, function(err, results) {
-            if(err) throw `Database error! ${err}` 
-
-            return callback(results.rows)
-        })
-    },
-    search(filter, callback) {
+    search(filter) {
         let query = `
-        SELECT recipes.*, chefs.name AS chef_name
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        WHERE recipes.title ILIKE '%${filter}%'
+            SELECT recipes.*, chefs.name as chef_name FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+                WHERE recipes.title ILIKE '%${filter}%'
         `
 
-        db.query(query, function(err, results){
-            if (err) throw `Database error! ${err}`
-
-            return callback (results.rows)
-        })
+        return db.query(query)
     },
-    find(id, callback) {
-        db.query(`SELECT recipes.*, chefs.name AS chef
-                    FROM recipes
-                    LEFT JOIN chefs ON (recipes.chef_id = chefs.id) 
-                WHERE recipes.id = $1`, [id], function(err, results){
-            if(err) throw `Database error! ${err}` 
-
-            return callback(results.rows[0])
-        })
+    find(id) {
+        return db.query(`
+            SELECT recipes.*, chefs.id as chef_id, chefs.name as chef_name, files.path as images
+            FROM recipe_files
+            FULL JOIN recipes ON (recipe_files.recipe_id = recipes.id)
+            LEFT JOIN files ON (recipe_files.file_id = files.id)
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE recipes.id = $1`, [id])
     },
-    chefs(callback) {
-        db.query(`
-            SELECT chefs.*, count(recipes) AS total_recipes
-            FROM chefs
-            LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
-            GROUP BY chefs.id
-            ORDER BY name`, function(err, results){
-            if (err) throw `Database error! ${err}`
-
-            return callback(results.rows)
-        })
+    chefs() {
+        return db.query(`
+        SELECT chefs.*, count(recipes) as total_recipes, files.path as avatar
+        FROM chefs
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        LEFT JOIN files ON (files.id = chefs.file_id)
+        GROUP BY chefs.id, files.id
+        `)
     },
-    allRecipes(callback) {
-        db.query(`SELECT * FROM recipes`, function(err, results){
-            if(err) throw `Database error! ${err}` 
-
-            return callback(results.rows)
-        })
+    allRecipes() {
+        let query = `            
+        SELECT recipes.*, chefs.name as chef_name FROM recipes
+			LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            `
+        return db.query(query)
+    },
+    files(id) {
+        return db.query(`
+        SELECT recipe_files.*, files.path FROM recipe_files
+        LEFT JOIN files ON (recipe_files.file_id = files.id)
+        WHERE recipe_files.recipe_id = $1
+        `, [id])
     }
 }
