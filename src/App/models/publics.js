@@ -6,6 +6,7 @@ module.exports = {
             SELECT recipes.*, chefs.name as chef_name FROM recipes
             LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
                 WHERE recipes.title ILIKE '%${filter}%'
+            ORDER BY recipes.updated_at DESC
         `
 
         return db.query(query)
@@ -31,7 +32,8 @@ module.exports = {
     allRecipes() {
         let query = `            
         SELECT recipes.*, chefs.name as chef_name FROM recipes
-			LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            ORDER BY recipes.created_at DESC
             `
         return db.query(query)
     },

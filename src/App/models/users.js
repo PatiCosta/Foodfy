@@ -32,7 +32,8 @@ module.exports = {
     recipeIndex() {
         let query = `            
         SELECT recipes.*, chefs.name as chef_name FROM recipes
-			LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            ORDER BY recipes.created_at DESC
             `
         return db.query(query)
     },
@@ -201,6 +202,7 @@ module.exports = {
             FROM chefs
             LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
             WHERE chefs.id = $1
+            ORDER BY recipes.created_at DESC
         `, [id])
     },
 
