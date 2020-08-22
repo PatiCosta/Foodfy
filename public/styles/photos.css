@@ -1,0 +1,129 @@
+/* PHOTOS UPLOAD */
+
+form .photos-container {
+    display: grid;
+    grid-template-columns: 149px 1fr;
+    width: 100%;
+    gap: 10.5px;
+}
+
+form #photos-upload {
+    position: relative;
+    width: 149px;
+    height: 149px;
+    border-radius: 3.5px;
+    border: 1px solid #DDDDDD;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+form #photos-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+form #photos-upload i{
+    font-size: 28px;
+
+    color: #DDDDDD;
+    
+    cursor: pointer;
+
+}
+
+form #photos-preview {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+form #photos-preview img{
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+}
+
+#photos-preview .photo {
+    position: relative;
+}
+
+#photos-preview .photo i{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(255, 255, 255, 0.8);
+    color: red;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    font-size: 39.6px;
+
+    transition: opacity 200ms;
+
+    opacity: 0;
+}
+
+#photos-preview .photo:hover i {
+    opacity: 1;
+}
+
+
+/*  GALLERY */
+
+.admin .recipe-detail .gallery-preview img {
+    margin-top: 0px;
+}
+
+.gallery {
+    position: relative;
+}
+
+.gallery-preview {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 8px;
+
+    position: absolute;
+    right: 0;
+}
+
+.gallery-preview img{
+    height: 50;
+    width: 50px;
+
+    margin-left: 10px;
+
+    object-fit: cover;
+
+    opacity: 0.6;
+
+    cursor: pointer;
+
+    transition: 200ms;
+}
+
+.gallery-preview img:hover,
+.gallery-preview img.active {
+    opacity: 1;
+}

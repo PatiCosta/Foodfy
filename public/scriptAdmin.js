@@ -1,3 +1,14 @@
+// ACTIVE LINK
+
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("a")
+
+for (item of menuItems) {
+    if(currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("link-active-admin")
+    }
+}
+
 const ImageGallery = {
     previews: document.querySelectorAll('gallery-preview img'),
     highlight: document.querySelector('.gallery .highlight > img'),
@@ -81,39 +92,58 @@ const ChefAvatarUpload = {
             divInput.value += `Avatar importado com sucesso!`
 
             return div
-    },
-    // getRemoveButton() {
-    //     const button = document.createElement('i')
-    //     button.classList.add('material-icons')
-    //     button.innerHTML = "close"
-
-    //     return button
-    // },
-    // removePhoto(event) {
-    //     const photoDiv = event.target.parentNode // <div class="photo">
-    //     const photosArray = Array.from(ChefAvatarUpload.preview.children)
-    //     const index = photosArray.indexOf(photoDiv)
-
-    //     PhotosUpload.files.splice(index, 1)
-    //     PhotosUpload.input.files = ChefAvatarUpload.getAllFiles()
-
-    //     photoDiv.remove()
-    // },
-    // removeOldPhoto(event){
-    //     const photoDiv = event.target.parentNode
-
-    //     if(photoDiv.id) {
-    //         const removedFiles = document.querySelector('input[name="removed_files"')
-
-    //         if (removedFiles) {
-    //             removedFiles.value += `${photoDiv.id},`
-    //         }
-    //     }
-
-    //     photoDiv.remove()
-    // }
+    }
 }
 
+const Validate = {
+    apply(input, func) {
+        Validate.clearErrors()
+
+        let results = Validate[func](input.value)
+        input.value = results.value
+
+        if (results.error) {
+            Validate.displayError(input, results.error)
+        }
+
+    },
+    displayError(input, error) {
+        const div = document.createElement('div')
+        div.classList.add('error')
+        div.innerHTML = error
+
+        const inputToValidate = document.querySelector('.input-validate')
+        inputToValidate.classList.add('wrong')
+
+        const container = document.querySelector('.edit-content')
+        container.parentNode.appendChild(div)
+
+        input.focus()
+    },
+    clearErrors() {
+        const errorDiv = document.querySelector('.error')
+        const inputWithError = document.querySelector('.wrong')
+
+        if (errorDiv) {
+            errorDiv.remove()
+            inputWithError.classList.remove('wrong')
+        }
+    },
+    isEmail(value) {
+        let error = null
+
+        const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+        if(!value.match(mailFormat)) {
+            error = "Email inválido"
+        }
+
+        return {
+            error,
+            value   
+        }
+    }
+}
 
 document.querySelector(".add-ingredient").addEventListener("click", addIgredient)
 document.querySelector(".add-preparation").addEventListener("click", addPreparation)

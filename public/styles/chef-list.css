@@ -1,0 +1,54 @@
+/* LIST CHEFS */
+
+.chefs-container {
+    margin-top: 20px;
+    margin: auto;
+    width: 940px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.chefs-container .chef-card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.chefs-container .chef-card img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chefs-container .chef-card .chef-card-info {
+    margin-left: 20px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.chefs-container .chef-card .chef-card-info h2 {
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.chefs-container .chef-card .chef-card-info p {
+    margin-top: 5px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.chefs-container .chef-card .chef-card-info a {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.chefs-container .chef-card .chef-card-info a p{
+    color: #6558C3;
+}

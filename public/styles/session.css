@@ -1,0 +1,48 @@
+/* SESSION login */
+
+
+.session .menu {
+    margin-left: 0;
+}
+
+.session .menu a {
+    margin: auto;
+}
+
+.session {
+    margin: auto
+
+}
+
+.session form {
+    display: flex;
+    flex-direction: column;
+
+    width: 500px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.session form .description {
+    width: 100%;
+}
+
+.session form .description h1 {
+    margin: auto;
+}
+
+.session form .description button,
+.session form .description a {
+    margin-top: 35px;
+}
+
+.session form .description a {
+    color: #969696;
+    background: none;
+
+    padding-left: 0;
+}
+
+.session .edit-content {
+    margin: auto;
+}

@@ -1,0 +1,40 @@
+/*========PINK BOX===========*/
+
+.description-home{
+    width: 940px;
+    height: 366px;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-left: 16.4%;
+    display: flex
+}
+
+.text-home h1{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 38px;
+}
+
+.text-home p{
+    font-size: 18px;
+    color: #000000;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.text-home {
+    margin-left: 4.3%;
+    margin-top: 10.6%;
+    width: 316px;
+}
+
+.chef {
+    position: absolute;
+    margin: 66px 0 0 624px;
+}
+
+.chef img{
+    width: 216px;
+    height: 300px
+}

@@ -1,0 +1,149 @@
+/*=============RECIPE DETAIL=============*/
+
+.recipe-detail,
+.chef-detail {
+    margin: 50px 230px 50px;
+    width: 940px;
+}
+
+.admin .recipe-detail,
+.admin .chef-detail{
+    margin-top: 55px;
+}
+
+
+.admin .recipe-detail img {
+    margin-top: 20px;
+}
+
+.admin .chef-detail .chef-image {
+    margin-top: 50px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+}
+
+.description h1 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.save {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #6558C3;
+    border-radius: 4px;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-detail img{
+    height: 280px;
+    width: 940px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.chef-detail .chef-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chef-detail img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.recipe-title {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chef-title {
+    margin-top: 30px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.recipe-title h1,
+.chef-title h1 {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.recipe-title h2,
+.chef-title h2{
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+    font-weight: normal;
+}
+
+.title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.titles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    gap: 8px;
+}
+
+.button-ingredients,
+.button-prepare,
+.button-info{
+    font-size: 12px;
+    color: #999999;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+
+.content-ingredients,
+.content-prepare {
+    margin-top: 20px;
+    margin-bottom: 39px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin-left: 20px;
+    display: none;
+}
+
+.content-info {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    display: none;
+}
+
+.admin .content-ingredients,
+.admin .content-prepare,
+.admin .content-info {
+    display: block;
+}
+
+.active {
+    display: block;
+}

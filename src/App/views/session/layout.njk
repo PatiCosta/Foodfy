@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+        {% block head %}
+        <title>Foodfy</title>
+        {% endblock %}
+
+        {% include "styles.njk" %}
+    </head>
+    <body class="session">
+
+        {% include "user/users/messages.njk" %}
+
+        <header>
+            <div class="menu">
+                <a href="/admin/login" id="logo"><img src="/logo.png" alt="Logo"></a>
+            </div>
+        </header>
+
+        {%block content%}
+        {% endblock %}
+
+        <script src="/scriptAdmin.js">
+
+        </script>
+    </body>
+</html>

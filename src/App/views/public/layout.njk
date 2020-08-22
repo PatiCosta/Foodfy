@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+        {% block head %}
+        <title>Foodfy</title>
+        {% endblock %}
+
+        {% include "styles.njk" %}
+
+
+    </head>
+    <body>
+        <header>
+            <div class="menu">
+                <a href="/" id="logo"><img src="/logo.png" alt="Logo"></a>  
+                <a href="/sobre" id="link-about">Sobre</a>
+                <a href="/receitas" id="link-recipes">Receitas</a>
+                <a href="/chefs" id="link-chefs">Chefs</a>
+                <form action="/search" method="GET">
+                        <input type="text" 
+                        name="filter" 
+                        placeholder="Buscar uma receita"
+                        value="{{filter}}">
+                        <button type="submit">Buscar</button>
+                </form>
+            </div>
+        </header>
+
+        {%block content%}
+        {% endblock %}
+        <footer>
+            <p>Todos os direitos reservados, receitas Foodfy.</p>
+        </footer>
+        <script src="/script.js"></script>
+    </body>
+</html>

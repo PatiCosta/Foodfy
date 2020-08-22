@@ -1,0 +1,40 @@
+/*==========MOST ACESSED========*/
+
+.recipes-home {
+    margin-top: 50px;
+    margin-left: 16.4%;
+}
+.recipes-home h1{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+}
+
+.card img{
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.card p{
+    color: #777777;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}

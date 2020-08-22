@@ -1,0 +1,29 @@
+{% extends "./layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Esqueci minha senha</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="edit container session">
+        <div class="edit-content">
+
+            <form action="/admin/forgot-password" method="post">
+                <div class="description">
+                    <h1>Esqueceu a senha?</h1>
+                </div>
+                <div class="input-block">
+                    <p>Email</p>
+                    <input class="input-validate" type="email" name="email" value="{{user.email}}" placeholder="Digite seu email para recuperar a sua senha" onblur="Validate.apply(this, 'isEmail')" required>
+                </div>
+
+                <div class="description">
+                    <div></div>
+                    <button type="submit">Recuperar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

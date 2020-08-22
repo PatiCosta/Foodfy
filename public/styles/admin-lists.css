@@ -1,0 +1,92 @@
+/*=============LIST ADMIN=============*/
+
+.admin-list {
+    margin-left: 230px;
+    max-width: 950px;
+}
+
+.admin-list h1{
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.admin-list-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.admin-list-header a {
+    width: 139px;
+}
+
+.admin-list-cards {
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 20px;
+}
+
+.users .admin-list-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.admin-list-card {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 20px;
+}
+
+.admin-list-card img{
+    width: 172px;
+    height: 80px;
+    border-radius: 8.57px;
+}
+
+.admin-list-card-info h2{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.users .admin-list-card-info h2 {
+    margin-bottom: 4px;
+}
+
+.admin-list-card-info p {
+    font-size: 14px;
+    line-height: 16px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.users .admin-list-card-info p {
+    margin-bottom: 16px;
+}
+
+.admin-list-card-info a{
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #6558C3;
+    font-weight: bold;
+}
+
+.users .admin-list-card-info .actions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.users .admin-list-card-info .actions form button {
+    margin-left: 16px;
+    color: #F55A5A;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+}

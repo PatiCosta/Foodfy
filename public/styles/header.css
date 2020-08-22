@@ -1,0 +1,106 @@
+/*==========HEADER=========*/
+header {
+    background-color: white;
+    width: 100%;
+}
+
+.admin header {
+    background-color: #111111;
+    height: 80px;
+}
+
+#logo img{
+    margin-top: 27px;
+    width: 90.6px;
+    height: 26.9px;
+}
+
+.menu   {
+    font-size: 16px;
+    width: 940px;
+    margin-left: 16.4%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.admin .menu form button{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.admin .menu form {
+    position: absolute;
+    right: 3.57%;
+    top: 40%;
+}
+
+
+#link-about,
+#link-recipes,
+#link-chefs {
+    margin-left: 122.4px;
+    margin-top: 42px;
+    text-decoration: none;
+    color: black;
+    line-height: 19px;
+}
+
+#link-recipes,
+#link-chefs {
+    margin-left: 30px;
+}
+
+
+.link-active {
+    font-weight: bold;
+}
+
+.admin .links a.link-active-admin {
+    color: #ffffff;
+}
+
+.menu form input {
+    margin-left: 175px;
+    margin-top: 28px;
+    padding-left: 15px;
+    width: 231px;
+    height: 37px;
+    box-sizing: border-box;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.menu form button {
+    margin-left: 8px;
+    padding: 9px 20px;
+    color: #ffffff;
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #6558C3;
+    border-radius: 4px;
+}
+
+.no-search {
+    display: none;
+}
+
+.admin .links {
+    margin-left: 50.4px;
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    margin-top: 31px;
+}
+
+.admin .links a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #999999;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,102 @@
+/*=============EDIT ADMIN=============*/
+.edit-content {
+    margin-left: 230px;
+    margin-top: 55px;
+    width: 940px;
+}
+
+.description{
+    display: flex;
+}
+
+.edit-content form .description button {
+   background-color: #6558C3;
+   border-radius: 4px;
+   height: 37px;
+   padding: 9px 20px;
+   font-size: 16px;
+   line-height: 19px;
+   color: white;
+   font-weight: bold;
+   margin: 0;
+}
+
+.description a,
+.admin-list-header a{
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #6558C3;
+   border-radius: 4px;
+   padding: 9px 20px;
+   font-size: 16px;
+   line-height: 19px;
+   color: white;
+   font-weight: bold;
+}
+
+.edit-content .description div:first-of-type {
+   display: flex;
+}
+
+.edit-content .description .delete {
+   height: 37px;
+   width: 92px;
+   padding: 9px 20px;
+   margin-right: 10px;
+
+   font-size: 16px;
+   line-height: 19px;
+   font-weight: bold;
+
+   color: white;
+   background-color: #DC4747;
+
+   
+}
+
+.description button{
+    cursor: pointer;
+}
+
+.edit-content form p{
+   font-size: 16px;
+   line-height: 19px;
+   font-weight: bold;
+   margin-bottom: 10px;
+   margin-top: 30px;
+}
+
+.edit-content form input,
+.edit-content form select {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    padding: 15px 20px;  
+}
+
+.edit-content form .ingredient,
+.edit-content form .preparation {
+   margin-bottom: 10px;
+}
+
+.edit-content form textarea {
+   height: 257px;
+   margin-bottom: 30px;
+   width: 100%;
+   border: 1px solid #DDDDDD;
+   border-radius: 4px;
+   padding: 18px 20px;
+}
+
+.edit-content form button {
+   margin-top: 5px;
+   font-size: 16px;
+   line-height: 19px;
+   color: #6558C3;
+   font-weight: bold;
+   background: none;
+   cursor: pointer;
+}

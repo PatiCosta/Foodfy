@@ -1,0 +1,49 @@
+{% extends "../layout.njk" %}
+
+    {% block head %}
+        <title>Editando Chef</title>
+        
+    {% endblock %}
+    {% block content %}
+        <div class="edit">
+            
+            <div class="edit-content">
+
+                <div class="description">
+                    <form id="form-delete" action="/admin/chefs?_method=DELETE" method="POST">
+                        <input type="hidden" name="id" value={{chef.id}}>
+                    </form>
+                </div>
+
+                <form action="/admin/chefs?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                    <div class="description">
+                        <h1>Editando Chef</h1>
+                        <div>
+                            <input type="submit" class="delete" id="delete" value="Deletar" form="form-delete">
+                            <button type="submit" class="save">Salvar chef</button>
+                            <input type="hidden" name="id" value="{{chef.id}}">
+                        </div>
+                    </div>
+
+                    <p>Nome</p>
+                    <input type="text" name="name" value="{{chef.name}}">
+
+                    <p>Avatar</p>
+                    <div class="avatar-container">
+                        <div class="avatar-preview on">
+                            <div class="avatar">
+                                <input name="avatar_path" type="text" value="{{chef.avatar}}" disabled>
+                            </div>
+                        </div>
+                        <div id="avatar-upload">
+                            <div>
+                                <p>Enviar Avatar</p>
+                            </div>
+                            <input id="avatar-input" type="file" name="avatar" accet="image/*" onchange="ChefAvatarUpload.handleFileInput(event)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

@@ -1,0 +1,42 @@
+{% extends "../layout.njk" %}
+
+    {% block head %}
+        <title>Bem vindo {{user.name}}</title>
+        
+    {% endblock %}
+    {% block content %}
+        <div class="edit container">
+            <div class="edit-content user">
+
+                <form action="/admin/users?_method=PUT" method="POST">
+
+                    <div class="description">
+                        <h1>Bem vindo {{user.name}}</h1>
+                        <div>
+                            <button type="submit" class="save">Salvar</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-block">
+                            <p>Nome</p>
+                            <input type="text" name="name" placeholder="Digite o nome completo" value="{{user.name}}" required>
+                        </div>
+                        <div class="input-block">
+                            <p>E-mail</p>
+                            <input class="input-validate" type="email" name="email" value="{{user.email}}" placeholder="Digite o email" onblur="Validate.apply(this, 'isEmail')" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-block">
+                            <p>Senha</p>
+                            <input type="password" name="password" placeholder="Digite a senha" required>
+                        </div>
+                        <input type="hidden" name="id" value={{user.id}}>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

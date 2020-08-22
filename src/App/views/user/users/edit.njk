@@ -1,0 +1,55 @@
+{% extends "../layout.njk" %}
+
+    {% block head %}
+        <title>Atualizar usuário</title>
+        
+    {% endblock %}
+    {% block content %}
+        <div class="edit container">
+            <div class="edit-content user">
+
+                <div class="description">
+                    <form id="user-delete" action="/admin/users?_method=DELETE" method="POST">
+                        <input type="hidden" name="id" value={{user.id}}>
+                    </form>
+                </div>
+
+                <form action="/admin/users?_method=PUT" method="POST">
+
+                    <div class="description">
+                        <h1>Editando Usuário</h1>
+                        <div>
+                            {% if session.sessionId !== user.id %}
+                                <input type="submit" class="delete" id="delete-user" value="Deletar" form="user-delete">
+                            {% endif %}
+                            <button type="submit" class="save">Salvar</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-block">
+                            <p>Nome</p>
+                            <input type="text" name="name" placeholder="Digite o nome completo" value="{{user.name}}" required>
+                        </div>
+                        <div class="input-block">
+                            <p>Email</p>
+                            <input class="input-validate" type="email" name="email" value="{{user.email}}" placeholder="Digite o email" onblur="Validate.apply(this, 'isEmail')" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+
+                        <input type="checkbox" name="is_admin" id="is_admin" {% if user.is_admin == true %}
+                            checked
+                        {% endif %}> 
+                        <p>Administrador</p>
+
+                    </div>
+
+                    <input type="hidden" name="id" value={{user.id}}>
+
+        
+                </form>
+            </div>
+        </div>
+    {% endblock %}

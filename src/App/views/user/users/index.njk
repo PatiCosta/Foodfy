@@ -1,0 +1,32 @@
+{% extends "../layout.njk" %}
+
+    {% block head %}
+        <title>Foodfy - List</title>
+    {% endblock %}
+    {% block content %}
+        <div class="users admin-list">
+            <div class="admin-list-header">
+                <h1>Usuários</h1>
+                <a href="/admin/users/create">Novo</a>
+            </div>
+            <div class="admin-list-cards">
+                {% for user in users %}
+                    <div class="admin-list-card" id="{{user.id}}">
+                        <div class="admin-list-card-info">
+                            <h2>{{user.name}}</h2>
+                            <p>{{user.email}}</p>
+                            <div class="actions">
+                                <a href="/admin/users/{{user.id}}">Visualizar</a>
+                                {% if session.sessionId !== user.id %}
+                                    <form id="user-delete" action="/admin/users?_method=DELETE" method="POST">
+                                        <input type="hidden" name="id" value={{user.id}}>
+                                        <button type="submit">Remover</button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}

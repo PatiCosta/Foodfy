@@ -1,0 +1,41 @@
+{% extends "./layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Nova senha</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="edit container session">
+        <div class="edit-content">
+
+            <form action="/admin/password-reset" method="post">
+                <div class="description">
+                    <h1>Nova senha</h1>
+                </div>
+                <div class="input-block">
+                    <p>Email</p>
+                    <input class="input-validate" type="email" name="email" value="{{user.email}}" placeholder="Digite seu email" onblur="Validate.apply(this, 'isEmail')" required>
+                </div>
+                <div class="input-block">
+                    <p>Nova Senha</p>
+                    <input type="password" name="password" placeholder="Digite sua nova senha" required>
+                </div>
+                <div class="input-block">
+                    <p>Repetir Senha</p>
+                    <input type="password" name="passwordRepeat" placeholder="Repita a nova senha" required>
+                </div>
+
+                <div class="description">
+                    <div></div>
+                    <button type="submit">Nova senha</button>
+                </div>
+
+                <input type="hidden" name="token" value="{{token}}">
+
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

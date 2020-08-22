@@ -1,0 +1,114 @@
+{% extends "../layout.njk" %}
+
+    {% block head %}
+        <title>{{item.title}}</title>
+        
+    {% endblock %}
+    {% block content %}
+        <div class="edit">
+            <div class="edit-content">
+
+                <div class="description">
+                    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
+                        <input type="hidden" name="id" value={{item.id}}>
+                    </form>
+                </div>
+
+                <form action="/admin/recipes/{{item.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value={{item.id}}>
+
+                    <div class="description">
+                        <h1>Editando receita</h1>
+                        <div>
+                            <input type="submit" class="delete" id="delete" value="Deletar" form="form-delete">
+                            <button type="submit" class="save">Salvar receita</button>
+                        </div>
+                    </div>
+
+                    <p>Imagem da receita</p>
+                    <div class="photos-container">
+                        <div id="photos-upload">
+                            <input id="photos-input" type="file" name="photos" multiple accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
+                            <i class="material-icons">add</i>
+                        </div>
+                        <div id="photos-preview">
+                            {% if files %}
+                                {% for image in files %}
+                                    <div class="photo" id="{{image.file_id}}">
+                                        <img src="{{image.src}}" alt="{{image.name}}">
+                                        <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">
+                                            close
+                                        </i>
+                                    </div>
+                                {% endfor %}
+                                <input type="hidden" name="removed_files">
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <p>Título da receita</p>
+                    <input type="text" name="title" value="{{item.title}}">
+
+                    <p>Chef</p>
+                    <select name="chef_id">
+                        {% for chef in options %}
+                            <option value="{{chef.id}}" {%if item.chef_id == chef.id %}selected{%endif%}>
+                                {{chef.name}}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                    <p>Ingredientes</p>
+                    <div id="ingredients">
+                        {%if item.ingredients%}
+                            {% for ingredient in item.ingredients %}
+                            <div class="ingredient">
+                                <input type="text" name="ingredients[]" value="{{ingredient}}">
+                            </div>
+                            {% endfor %}
+                        {%else%}
+                            <div class="ingredient">
+                                <input type="text" name="ingredients[]">
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+                    
+
+                    <p>Modo de preparo</p>
+                    <div id="preparations">
+                        {%if item.preparation%}
+                            {% for preparation in item.preparation %}
+                                <div class="preparation">
+                                    <input type="text" name="preparation[]" value="{{preparation}}">
+                                </div>
+                            {% endfor %}
+                        {%else%}
+                            <div class="preparation">
+                                    <input type="text" name="preparation[]" value="{{preparation}}">
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button type="button" class="add-preparation">Adicionar novo passo</button>
+
+                    <p>Informações adicionais</p>
+                    <textarea type="text" name="information">{{item.information}}</textarea>
+
+                </form>
+
+            </div>
+        </div>
+
+        <script>
+            
+                const formDelete = document.querySelector("#form-delete")
+                formDelete.addEventListener("submit", function(event){
+                    const confirmation = confirm("Deseja realmente deletar?")
+
+                    if(!confirmation) {
+                        event.preventDefault()
+                    }
+                })
+            
+            </script>
+    {% endblock %}

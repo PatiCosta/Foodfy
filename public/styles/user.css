@@ -1,0 +1,41 @@
+/* create user */
+
+.user button,
+.user a {
+    width: 139px;
+}
+
+
+.user .description a {
+    margin-left: 16px;
+    background-color: #8A8A8A;
+}
+
+.user .input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user .input-group .input-block {
+    width: 48%
+}
+
+.user .checkbox-group {
+    display: flex;
+    align-items: center;
+    
+    margin-top: 35px;
+}
+
+.user .checkbox-group input {
+    width: 15px;
+    margin-right: 8px;
+}
+
+.user .checkbox-group p {
+    margin: 0;
+}
+
+.input-validate.wrong {
+    outline-color: #FF3131;
+}

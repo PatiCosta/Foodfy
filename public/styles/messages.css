@@ -1,0 +1,58 @@
+/* MESSAGES */
+
+.messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    z-index: 1;
+    opacity: 1;
+
+    height: 135px;
+    width: 344px;
+    padding: 16px;
+
+    border-radius: 4px;
+
+    color: white;
+
+    animation: hidemessage 400ms 3s ease-out forwards;
+}
+
+@keyframes hidemessage {
+    to {
+        opacity: 0;
+        top: -100px
+    }
+}
+
+.messages.error {
+    background-color: #FF3131;
+}
+
+.messages.success {
+    background-color: #01B12A;
+}
+
+
+/* Validate errors */
+.edit.container .error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 12%;
+    right: 38%;
+
+    border-radius: 4px;
+
+    color: #FF3131;
+}
+
+.edit.container.session div.error {
+    bottom: 50%;
+    left: 13.5%;
+}

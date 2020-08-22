@@ -1,0 +1,33 @@
+{% extends "./layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Login</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="edit container session">
+        <div class="edit-content">
+
+            <form action="/admin/login" method="post">
+                <div class="description">
+                    <h1>Iniciar sessão</h1>
+                </div>
+                <div class="input-block">
+                    <p>Email</p>
+                    <input class="input-validate" type="email" name="email" value="{{user.email}}" placeholder="Digite seu email" onblur="Validate.apply(this, 'isEmail')" required>
+                </div>
+                <div class="input-block">
+                    <p>Senha</p>
+                    <input type="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="description">
+                    <a href="/admin/forgot-password">Perdeu a senha?</a>
+                    <button type="submit">Acessar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
