@@ -84,7 +84,7 @@ module.exports = {
     async post (req, res) {
         try {
             if (!req.file)
-            return res.send('Please, send one avatar')
+            return res.send('Por favor, envie um avatar')
 
             const file = await Files.create({name: req.file.filename, path: req.file.path})
             const file_id = file.rows[0].id

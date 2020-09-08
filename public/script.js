@@ -10,7 +10,7 @@ for (item of menuItems) {
     }
 }
 
-// No search on chefs page
+// No search on some pages
 
 const formSearch = document.querySelector("form")
 

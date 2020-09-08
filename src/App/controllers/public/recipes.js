@@ -23,7 +23,7 @@ module.exports = {
         }
 
 
-        return res.render("./public/search", {filter, items: finalRecipes})
+        return res.render("./public/search", {filter, recipes: finalRecipes})
     
     },
     async all(req, res){
@@ -46,7 +46,7 @@ module.exports = {
         }
 
 
-        return res.render("./public/recipes", {items: finalRecipes})
+        return res.render("./public/recipes", {recipes: finalRecipes})
     },
     async show(req, res) {
         
@@ -61,7 +61,7 @@ module.exports = {
             src: `${req.protocol}://${req.headers.host}${file.path.replace("public","")}`
         }))
 
-        return res.render("./public/show", {item: recipe, files})
+        return res.render("./public/show", {recipe, files})
 
     },
 }

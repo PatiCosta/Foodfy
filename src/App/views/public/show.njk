@@ -1,7 +1,7 @@
 {% extends "./layout.njk" %}
 
     {% block head %}
-        <title>{{item.title}}</title>
+        <title>{{recipe.title}}</title>
         
     {% endblock %}
     {% block content %}
@@ -30,8 +30,8 @@
             </div>
 
             <div class="recipe-title">
-                <h1>{{item.title}}</h1>
-                <h2>por {{item.chef_name}}</h2>
+                <h1>{{recipe.title}}</h1>
+                <h2>por {{recipe.chef_name}}</h2>
             </div>
             
             <div class="titles">
@@ -39,7 +39,7 @@
                 <p class="button-ingredients">MOSTRAR</p>
             </div>
             <ul class="content-ingredients">
-                {% for ingredient in item.ingredients %}
+                {% for ingredient in recipe.ingredients %}
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
@@ -50,7 +50,7 @@
             </div>
 
             <ul class="content-prepare">
-                {% for prepare in item.preparation %}
+                {% for prepare in recipe.preparation %}
                     <li>{{prepare}}</li>
                 {% endfor %}
             </ul>
@@ -59,6 +59,6 @@
                 <h1 class="title">Informações adicionais</h1>
                 <p class="button-info">MOSTRAR</p>
             </div>
-            <p class="content-info">{{item.information}}</p>
+            <p class="content-info">{{recipe.information}}</p>
         </div>
     {% endblock %}

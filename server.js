@@ -6,6 +6,9 @@ const session = require('./src/config/session')
 
 const server = express()
 
+// login admin
+// admin patriicosouza@hotmail.com b80b6d49d030
+
 server.use(session)
 server.use((req, res, next) => {
     res.locals.session = req.session

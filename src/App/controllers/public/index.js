@@ -3,11 +3,11 @@ const Recipes = require('../../models/public/recipes')
 module.exports = {
     async index(req, res){
         let results = await Recipes.all()
-        let recipes = results.rows
+        let recipesResults = results.rows
 
         let finalRecipes = new Array()
 
-        for (recipe of recipes) {
+        for (recipe of recipesResults) {
             let fileResults = Recipes.files(recipe.id)
             fileResults = (await fileResults).rows[0].path
 
@@ -19,7 +19,9 @@ module.exports = {
             finalRecipes.push(recipe)
         }
 
-        return res.render("./public/index", {items: finalRecipes})
+        const recipes = finalRecipes.slice(0, 6)
+
+        return res.render("./public/index", {recipes})
     },
     about(req, res){
         return res.render("./public/about")

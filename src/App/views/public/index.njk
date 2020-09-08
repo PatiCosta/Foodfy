@@ -1,8 +1,9 @@
 {% extends "./layout.njk" %}
 
     {% block head %}
-        <title>Foodfy - Home</title>
+        <title>Foodfy</title>
     {% endblock %}
+
     {% block content %}
         
         <div class="description-home">
@@ -17,12 +18,12 @@
         <div class="recipes-home">
             <h1>Mais Acessadas</h1>
             <div class="cards">
-            {% for item in items %}
-                <div class="card" id="{{item.id}}">
-                    <img src="{{item.src}}" alt="{{item.title}}">
+            {% for recipe in recipes %}
+                <div class="card" id="{{recipe.id}}">
+                    <img src="{{recipe.src}}" alt="{{recipe.title}}">
                     <div class="card-info">
-                        <h2>{{item.title}}</h2>
-                        <p>{{item.author}}</p>
+                        <h2>{{recipe.title}}</h2>
+                        <p>Por {{recipe.chef_name}}</p>
                     </div>
                 </div>
             {% endfor %}
